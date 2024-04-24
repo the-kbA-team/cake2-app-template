@@ -1,30 +1,21 @@
 {
-  "name": "friendsofcake/app-template",
-  "description": "An empty CakePHP 2.5 application",
+  "name": "kba-team/cake2-app-template",
+  "description": "An empty CakePHP 2.10 application",
   "type": "project",
   "keywords" : [],
-  "homepage" : "http://cakephp.org",
   "license" : "MIT",
   "require" : {
-    "php" : ">=5.4",
+    "php" : "^8.1",
     "composer/installers" : "~1.0",
-    "cakephp/cakephp" : "2.*",
-    "friendsofcake/crud" : "3.*",
+    "kba-team/cakephp" : "^2.10",
     "josegonzalez/dotenv": "1.*",
     "ad7six/dsn": "0.3.*"
   },
-  "require-dev": {
-    "cakephp/debug_kit" : "2.2.*"
-  },
   "minimum-stability": "dev",
   "config": {
-    "preferred-install": "dist"
-  },
-  "extra": {
-    "heroku": {
-      "framework": "cakephp2",
-      "document-root": "webroot",
-      "index-document": "index.php"
+    "preferred-install": "dist",
+    "allow-plugins": {
+      "composer/installers": true
     }
   }
 }

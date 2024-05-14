@@ -24,4 +24,7 @@ jobs:
             - name: Composer install
               run: composer install
 
+            - name: Run PHPUnit
+              run: vendor/bin/phpunit
+
 

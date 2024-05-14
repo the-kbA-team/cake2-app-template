@@ -1,0 +1,19 @@
+name: CI
+
+on:
+    push:
+        branches:
+            - 'staging'
+    pull_request:
+        branches:
+            - '*'
+
+jobs:
+    job1:
+        name: Job1
+        runs-on: ubuntu-22.04
+        steps:
+            - name: Setup MySQL 8.0
+              run: |
+                  sudo service mysql start
+                  mysql -h 127.0.0.1 -u root -proot -e 'CREATE DATABASE cakephp;'

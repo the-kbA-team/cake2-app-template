@@ -18,3 +18,10 @@ jobs:
               run: |
                   sudo service mysql start
                   mysql -h 127.0.0.1 -u root -proot -e 'CREATE DATABASE cakephp;'
+
+            - uses: actions/checkout@v4
+
+            - name: Composer install
+              run: composer install
+
+

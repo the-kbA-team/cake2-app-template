@@ -10,8 +10,8 @@ on:
             - '*'
 
 jobs:
-    job1:
-        name: Job1
+    setup-cakephp:
+        name: Basic cakephp installation
         runs-on: ubuntu-22.04
         steps:
             - name: Setup MySQL 8.0

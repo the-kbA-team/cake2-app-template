@@ -4,6 +4,7 @@ on:
     push:
         branches:
             - 'staging'
+            - '5-choose-cicd-mysqlphp-solution'
     pull_request:
         branches:
             - '*'

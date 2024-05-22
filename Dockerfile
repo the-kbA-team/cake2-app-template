@@ -62,3 +62,6 @@ WORKDIR /app
 
 # Copy the cake2 app template code to the working directory
 COPY . .
+
+RUN set -xe; \
+    rm -Rf .editorconfig .github .gitignore CHANGELOG.md Dockerfile README.md

@@ -1,0 +1,6 @@
+/.editorconfig
+/.github
+.gitignore
+/CHANGELOG.md
+/Dockerfile
+/README.md

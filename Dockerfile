@@ -22,7 +22,7 @@ RUN set -xe; \
         php-yaml \
         php-zip \
         # --- PHP modules END ---
-        mysql;
+        mysql-server;
 
 # Allow to run composer as root
 ENV COMPOSER_ALLOW_SUPERUSER="1"
@@ -44,12 +44,12 @@ RUN set -xe; \
     rm -f "/usr/local/bin/composer-setup.php"; \
     rm -f "/usr/local/bin/composer-setup.sig"; \
     # Install git & unzip
-    apt-get install -qq -y --no-install-recommends git unzip; \
+    apt-get install -qq -y --no-install-recommends git unzip;
 
 # Prepare working directory
 RUN set -xe; \
     mkdir -p /app; \
-    chmod g+w,o+w /app; \
+    chmod g+w,o+w /app;
 
 # Set the working directory inside the container
 WORKDIR /app

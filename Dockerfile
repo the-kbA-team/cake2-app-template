@@ -1,5 +1,11 @@
 FROM ubuntu:22.04
 
+# Require timezone build argument, but keep it configurable.
+ARG TIMEZONE=Europe/Vienna
+
+# Define apt to not ask questions
+ENV DEBIAN_FRONTEND=noninteractive
+
 # install PHP & mysql
 RUN set -xe; \
     apt-get update -qq -y --fix-missing; \

@@ -27,4 +27,4 @@ jobs:
                 uses: docker/build-push-action@v4
                 with:
                     push: true
-                    tags: devkba/cake2-app-template:${{ GITHUB_REF_NAME }}
+                    tags: "devkba/cake2-app-template:$GITHUB_REF_NAME"

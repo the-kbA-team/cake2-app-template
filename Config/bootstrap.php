@@ -76,47 +76,4 @@ App::build(
  * CakePlugin::load('DebugKit'); //Loads a single plugin named DebugKit
  *
  */
-CakePlugin::load('Crud');
-
-if (php_sapi_name() !== 'cli' && Configure::read('debug') && in_array('DebugKit', App::objects('plugin'))) {
-	CakePlugin::load('DebugKit');
-	App::uses('CakeEventManager', 'Event');
-	CakeEventManager::instance()->attach(function ($event) {
-		$controller = $event->subject();
-
-		if (!isset($controller->Crud)) {
-			return;
-		}
-
-		$controller->Toolbar = $controller->Components->load(
-			'DebugKit.Toolbar',
-			[
-				'panels' => [
-					'Crud.Crud'
-				]
-			]
-		);
-		$controller->Crud->addListener('DebugKit', 'Crud.DebugKit');
-	}, 'Controller.initialize');
-}
-
-/**
- * You can attach event listeners to the request lifecycle as Dispatcher Filter . By Default CakePHP bundles two filters:
- *
- * - AssetDispatcher filter will serve your asset files (css, images, js, etc) from your themes and plugins
- * - CacheDispatcher filter will read the Cache.check configure variable and try to serve cached content generated from controllers
- *
- * Feel free to remove or add filters as you see fit for your application. A few examples:
- *
- * Configure::write('Dispatcher.filters', array(
- *		'MyCacheFilter', //  will use MyCacheFilter class from the Routing/Filter package in your app.
- *		'MyPlugin.MyFilter', // will use MyFilter class from the Routing/Filter package in MyPlugin plugin.
- * 		array('callable' => $aFunction, 'on' => 'before', 'priority' => 9), // A valid PHP callback type to be called on beforeDispatch
- *		array('callable' => $anotherMethod, 'on' => 'after'), // A valid PHP callback type to be called on afterDispatch
- *
- * ));
- */
-Configure::write('Dispatcher.filters', [
-	'AssetDispatcher',
-	'CacheDispatcher'
-]);
+CakePlugin::loadAll(); // Loads all plugins at once

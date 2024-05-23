@@ -46,7 +46,7 @@ if (!defined('ROOT')) {
  *
  */
 if (!defined('APP_DIR')) {
-	define('APP_DIR', 'app');
+	define('APP_DIR', '');
 }
 
 /**
@@ -68,7 +68,7 @@ define('TMP', ROOT . DS . 'tmp' . DS);
  * The following line differs from its sibling
  * /lib/Cake/Console/Templates/skel/webroot/index.php
  */
-define('CAKE_CORE_INCLUDE_PATH', ROOT . DS . 'vendor' . DS . 'cakephp' . DS . 'cakephp' . DS . 'lib');
+define('CAKE_CORE_INCLUDE_PATH', ROOT . DS . 'vendor' . DS . 'kba-team' . DS . 'cakephp' . DS . 'lib');
 
 /**
  * Editing below this line should NOT be necessary.

@@ -53,6 +53,7 @@ WORKDIR /app
 # Copy the cake2 app template code to the working directory
 COPY . .
 
-# remove superfluous files
+# remove superfluous files & install composer dependencies
 RUN set -xe; \
-    rm -Rf .editorconfig .github .gitignore CHANGELOG.md Dockerfile README.md
+    rm -Rf .editorconfig .github .gitignore CHANGELOG.md Dockerfile README.md; \
+    composer install --no-interaction

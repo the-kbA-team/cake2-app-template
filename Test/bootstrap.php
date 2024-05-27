@@ -89,5 +89,6 @@ if (!empty($failed)) {
 }
 
 App::uses('Dispatcher', 'Routing');
+App::uses('CakeFixtureManager', 'TestSuite/Fixture');
 
 

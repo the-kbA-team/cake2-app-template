@@ -27,6 +27,7 @@ RUN set -xe; \
         php-xdebug \
         php-yaml \
         php-zip \
+        php-xml \
         # --- PHP modules END ---
         mysql-server;
 

@@ -76,29 +76,7 @@ App::build(
  * CakePlugin::load('DebugKit'); //Loads a single plugin named DebugKit
  *
  */
-CakePlugin::load('Crud');
-
-if (php_sapi_name() !== 'cli' && Configure::read('debug') && in_array('DebugKit', App::objects('plugin'))) {
-	CakePlugin::load('DebugKit');
-	App::uses('CakeEventManager', 'Event');
-	CakeEventManager::instance()->attach(function ($event) {
-		$controller = $event->subject();
-
-		if (!isset($controller->Crud)) {
-			return;
-		}
-
-		$controller->Toolbar = $controller->Components->load(
-			'DebugKit.Toolbar',
-			[
-				'panels' => [
-					'Crud.Crud'
-				]
-			]
-		);
-		$controller->Crud->addListener('DebugKit', 'Crud.DebugKit');
-	}, 'Controller.initialize');
-}
+CakePlugin::loadAll();
 
 /**
  * You can attach event listeners to the request lifecycle as Dispatcher Filter . By Default CakePHP bundles two filters:

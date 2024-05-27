@@ -4,6 +4,12 @@
     "type": "project",
     "keywords" : [],
     "license" : "MIT",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/the-kbA-team/cake2-plugin-helloworld.git"
+        }
+    ],
     "require" : {
         "php" : "^8.1",
         "phpunit/phpunit": "^9.5",
@@ -11,13 +17,21 @@
         "kba-team/cakephp" : "^2.10",
         "josegonzalez/dotenv": "1.*",
         "ad7six/dsn": "0.3.*",
-        "kba-team/cakephp-filter-plugin": "dev-3-php-8x-compatibility"
+        "kba-team/cakephp-filter-plugin": "dev-3-php-8x-compatibility",
+        "kba-team/cake2-plugin-helloworld": "dev-main"
     },
     "minimum-stability": "dev",
     "config": {
-        "preferred-install": "dist",
+        "preferred-install": {
+            "kba-team/cakephp": "dist",
+            "kba-team/*": "source",
+            "*": "dist"
+        },
         "allow-plugins": {
             "composer/installers": true
+        },
+        "platform": {
+            "php": "8.1"
         }
     }
 }

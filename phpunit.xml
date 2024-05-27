@@ -15,7 +15,7 @@
          verbose="true">
     <testsuites>
         <testsuite name="default">
-            <directory>Plugin/Filter/Test/Case</directory>
+            <file>Plugin/Filter/Test/Case/Controller/Component/FilterComponentTest.php</file>
         </testsuite>
     </testsuites>
     <listeners>

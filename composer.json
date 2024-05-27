@@ -10,7 +10,6 @@
         "kba-team/cakephp": "^2.11",
         "josegonzalez/dotenv": "1.*",
         "ad7six/dsn": "0.3.*",
-        "friendsofcake/crud": "^3.1",
         "phpunit/phpunit": "^9.5"
     },
     "minimum-stability": "dev",

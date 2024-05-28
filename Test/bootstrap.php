@@ -91,4 +91,22 @@ if (!empty($failed)) {
 App::uses('Dispatcher', 'Routing');
 App::uses('CakeFixtureManager', 'TestSuite/Fixture');
 
+/*
+ * loading of lib/Cake/TestSuite/CakeTestSuiteDispatcher.php
+ * In bootstrap.php, it is sufficient if the const(s) are defined outside the class of CakeTestSuiteDispatcher.php.
+ * However, when loading CakeTestSuiteDispatcher.php in the unit test, a double definition of const(s) error occurs,
+ * so load it here.
+ */
+App::uses('CakeTestSuiteDispatcher', 'TestSuite');
+App::load('CakeTestSuiteDispatcher');
+
+/*
+ * Classes that can be used without declaring App::uses()
+ */
+App::uses('ClassRegistry', 'Utility');
+App::uses('CakeTestCase', 'TestSuite');
+App::uses('CakeTestSuite', 'TestSuite');
+App::uses('ControllerTestCase', 'TestSuite');
+App::uses('CakeTestModel', 'TestSuite/Fixture');
+
 

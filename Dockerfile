@@ -33,7 +33,8 @@ RUN set -xe; \
         # --- PHP modules END ---
         mysql-server; \
     # stop the mysql service after installation
-    service mysql stop;
+    service mysql stop; \
+    usermod -d /var/lib/mysql/ mysql;
 
 # Allow to run composer as root
 ENV COMPOSER_ALLOW_SUPERUSER="1"

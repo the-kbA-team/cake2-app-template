@@ -31,7 +31,9 @@ RUN set -xe; \
         php-zip \
         php-xml \
         # --- PHP modules END ---
-        mysql-server;
+        mysql-server; \
+    # stop the mysql service after installation
+    service mysql stop;
 
 # Allow to run composer as root
 ENV COMPOSER_ALLOW_SUPERUSER="1"
@@ -59,3 +61,9 @@ COPY . .
 RUN set -xe; \
     rm -Rf .editorconfig .github .gitignore CHANGELOG.md Dockerfile README.md; \
     composer install --no-interaction
+
+# run before and after command scripts
+ENTRYPOINT ["/app/entrypoint.sh"]
+
+# default command: start a shell
+CMD ["/bin/bash", "-l"]

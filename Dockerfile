@@ -11,6 +11,8 @@ RUN set -xe; \
     apt-get update -qq -y --fix-missing; \
     # install PHP and its modules
     apt-get install -qq -y --no-install-recommends \
+        vim \
+        nano \
         # Install just the CLI version.
         php-cli \
         php-mbstring \

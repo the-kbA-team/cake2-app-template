@@ -12,7 +12,8 @@
          convertDeprecationsToExceptions="true"
          failOnRisky="true"
          failOnWarning="true"
-         verbose="true">
+         verbose="true"
+         stderr="true">
     <testsuites>
         <testsuite name="default">
             <directory>Test/</directory>

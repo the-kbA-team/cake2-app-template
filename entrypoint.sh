@@ -5,7 +5,7 @@ if [ -n "${BEFORE_SCRIPT}" ]; then
 fi
 # execute the command
 if [ -n "${*}" ]; then
-    "$*"
+    /bin/sh -c "$*"
     E=$?
 else
     (>&2 echo "ERROR: Missing docker command!")
